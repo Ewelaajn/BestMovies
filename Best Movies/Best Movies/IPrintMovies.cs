@@ -2,7 +2,7 @@
 
 namespace Best_Movies
 {
-    public interface IPrintTopThree
+    public interface IPrintMovies
     {
         void PrintMovies(IEnumerable<Movie> movies);
     }

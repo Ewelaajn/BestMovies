@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Best_Movies
 {
-    public class Top_3: IPrintTopThree
+    public class Top_3: IPrintMovies
     {
         private readonly IEnumerable<Movie> _movies;
 
@@ -19,6 +19,7 @@ namespace Best_Movies
         {
             var stack = new Stack<Movie>();
             int i = 1;
+            var topThreeMovies = new List<Movie>();
 
             foreach (var movie in _movies)
             {
@@ -29,6 +30,7 @@ namespace Best_Movies
                 else if (stack.Peek().UserRating == movie.UserRating)
                 { 
                     stack.Push(movie);
+                    topThreeMovies.Add(new Place(movie.Title, movie.UserRating, i));
                 }
                 else if (i == 3)
                 {
@@ -49,7 +51,6 @@ namespace Best_Movies
 
         public void PrintMovies(IEnumerable<Movie> movies)
         {
-          
             
         }
     }
