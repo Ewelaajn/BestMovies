@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Win32.SafeHandles;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace Best_Movies
@@ -24,6 +25,13 @@ namespace Best_Movies
                 new Movie("Lego Batman", 10),
                 new Movie("Ford vs Ferrari", 8)
             };
+
+            var sortedMovies = listOfMovies.OrderByDescending(i => i.UserRating);
+
+            var topThree = new Top_3(sortedMovies);
+            var result = topThree.TopThree();
+            topThree.PrintMovies(result);
+            
         }
     }
 }
