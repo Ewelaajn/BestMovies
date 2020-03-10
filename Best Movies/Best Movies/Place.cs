@@ -7,5 +7,10 @@
         {
             PlaceNum = placeNum;
         }
+
+        public override string ToString()
+        {
+            return $"{PlaceNum}. place: {Title} with {UserRating} points.";
+        }
     }
 }

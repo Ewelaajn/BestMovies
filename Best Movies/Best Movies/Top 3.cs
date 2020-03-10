@@ -25,12 +25,11 @@ namespace Best_Movies
             {
                 if (stack.Count == 0)
                 {
-                    stack.Push(movie);
+                    stack.Push(new Place(movie.Title, movie.UserRating, i));
                 }
                 else if (stack.Peek().UserRating == movie.UserRating)
                 { 
-                    stack.Push(movie);
-                    topThreeMovies.Add(new Place(movie.Title, movie.UserRating, i));
+                    stack.Push(new Place(movie.Title, movie.UserRating, i));
                 }
                 else if (i == 3)
                 {
@@ -38,8 +37,8 @@ namespace Best_Movies
                 }
                 else
                 {
-                    stack.Push(movie);
                     i++;
+                    stack.Push(new Place(movie.Title, movie.UserRating, i));
                 }
             }
 
@@ -51,7 +50,8 @@ namespace Best_Movies
 
         public void PrintMovies(IEnumerable<Movie> movies)
         {
-            
+            foreach(var movie in movies)
+            Console.WriteLine(movie);
         }
     }
     

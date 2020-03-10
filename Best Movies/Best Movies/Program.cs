@@ -31,7 +31,6 @@ namespace Best_Movies
             var topThree = new Top_3(sortedMovies);
             var result = topThree.TopThree();
             topThree.PrintMovies(result);
-            
         }
     }
 }
